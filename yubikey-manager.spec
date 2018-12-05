@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	tests		# unit tests (broken as of 0.7.0)
+%bcond_with	tests		# unit tests (broken as of 1.0.1)
 
 Summary:	Tool for managing your YubiKey configuration
 Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
@@ -15,19 +15,15 @@ URL:		https://developers.yubico.com/yubikey-manager/
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools
 %if %{with tests}
+BuildRequires:	python-cryptography
+BuildRequires:	python-enum34
 BuildRequires:	python-fido2
 BuildRequires:	python-mock
+BuildRequires:	python-pyOpenSSL
 BuildRequires:	python-pyscard
 BuildRequires:	python-pyusb
+BuildRequires:	python-six
 %endif
-Requires:	python-click
-Requires:	python-cryptography
-Requires:	python-enum34
-Requires:	python-fido2
-Requires:	python-pyOpenSSL
-Requires:	python-pyscard
-Requires:	python-pyusb
-Requires:	python-six
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
