@@ -17,13 +17,14 @@ BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-cryptography
 BuildRequires:	python-enum34
-BuildRequires:	python-fido2
+BuildRequires:	python-fido2 >= 0.7.0
 BuildRequires:	python-mock
 BuildRequires:	python-pyOpenSSL
 BuildRequires:	python-pyscard
 BuildRequires:	python-pyusb
 BuildRequires:	python-six
 %endif
+Requires:	python-fido2 >= 0.7.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
