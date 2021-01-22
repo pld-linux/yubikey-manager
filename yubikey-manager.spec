@@ -12,19 +12,18 @@ Group:		Applications/System
 Source0:	https://developers.yubico.com/yubikey-manager/Releases/%{name}-%{version}.tar.gz
 # Source0-md5:	5db30780e6ffbe55698228acde70efae
 URL:		https://developers.yubico.com/yubikey-manager/
-BuildRequires:	python-modules
-BuildRequires:	python-setuptools
+BuildRequires:	python3-modules
+BuildRequires:	python3-setuptools
 %if %{with tests}
-BuildRequires:	python-cryptography
-BuildRequires:	python-enum34
-BuildRequires:	python-fido2 >= 0.7.0
-BuildRequires:	python-mock
-BuildRequires:	python-pyOpenSSL
-BuildRequires:	python-pyscard
-BuildRequires:	python-pyusb
-BuildRequires:	python-six
+BuildRequires:	python3-cryptography
+BuildRequires:	python3-fido2 >= 0.7.0
+BuildRequires:	python3-mock
+BuildRequires:	python3-pyOpenSSL
+BuildRequires:	python3-pyscard
+BuildRequires:	python3-pyusb
+BuildRequires:	python3-six
 %endif
-Requires:	python-fido2 >= 0.7.0
+Requires:	python3-fido2 >= 0.7.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,18 +41,16 @@ urządzeń YubiKey.
 %{__rm} -r test/on_yubikey
 
 %build
-%py_build
+%py3_build
 
 %if %{with tests}
-%{__python} -m unittest discover -s test
+%{__python3} -m unittest discover -s test
 %endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%py_install
-
-%py_postclean
+%py3_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,5 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING NEWS README.adoc
 %attr(755,root,root) %{_bindir}/ykman
-%{py_sitescriptdir}/ykman
-%{py_sitescriptdir}/yubikey_manager-%{version}-py*.egg-info
+%{py3_sitescriptdir}/ykman
+%{py3_sitescriptdir}/yubikey_manager-%{version}-py*.egg-info
