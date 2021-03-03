@@ -5,25 +5,26 @@
 Summary:	Tool for managing your YubiKey configuration
 Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
 Name:		yubikey-manager
-Version:	3.1.2
-Release:	2
+Version:	4.0.0
+Release:	1
 License:	BSD
 Group:		Applications/System
 Source0:	https://developers.yubico.com/yubikey-manager/Releases/%{name}-%{version}.tar.gz
-# Source0-md5:	5db30780e6ffbe55698228acde70efae
+# Source0-md5:	9bfc8664be0638b99614091eff49eb80
 URL:		https://developers.yubico.com/yubikey-manager/
-BuildRequires:	python3-modules
+BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-cryptography
-BuildRequires:	python3-fido2 >= 0.7.0
+BuildRequires:	python3-fido2 >= 0.9.0
 BuildRequires:	python3-mock
 BuildRequires:	python3-pyOpenSSL
 BuildRequires:	python3-pyscard
 BuildRequires:	python3-pyusb
 BuildRequires:	python3-six
 %endif
-Requires:	python3-fido2 >= 0.7.0
+Requires:	python3-fido2 >= 0.9.0
+Requires:	python3-modules >= 1:3.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,14 +38,11 @@ urządzeń YubiKey.
 %prep
 %setup -q
 
-# integration tests, require device
-%{__rm} -r test/on_yubikey
-
 %build
 %py3_build
 
 %if %{with tests}
-%{__python3} -m unittest discover -s test
+%{__python3} -m unittest discover -s tests
 %endif
 
 %install
@@ -60,4 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING NEWS README.adoc
 %attr(755,root,root) %{_bindir}/ykman
 %{py3_sitescriptdir}/ykman
+%{py3_sitescriptdir}/yubikit
 %{py3_sitescriptdir}/yubikey_manager-%{version}-py*.egg-info
