@@ -31,7 +31,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Python library and command line tool for configuring a YubiKey.
 
-%description
+%description -l pl.UTF-8
 Pythonowa biblioteka i narzędzie linii poleceń do konfiguracji
 urządzeń YubiKey.
 
