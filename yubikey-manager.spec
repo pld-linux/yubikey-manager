@@ -5,12 +5,12 @@
 Summary:	Tool for managing your YubiKey configuration
 Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
 Name:		yubikey-manager
-Version:	4.0.3
+Version:	4.0.5
 Release:	1
 License:	BSD
 Group:		Applications/System
 Source0:	https://developers.yubico.com/yubikey-manager/Releases/%{name}-%{version}.tar.gz
-# Source0-md5:	48d17a8114334a21a7cae3bc40750016
+# Source0-md5:	0033fe7aca126920622f90d0f9fc7c0f
 URL:		https://developers.yubico.com/yubikey-manager/
 BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
