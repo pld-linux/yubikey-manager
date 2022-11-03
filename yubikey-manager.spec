@@ -5,25 +5,25 @@
 Summary:	Tool for managing your YubiKey configuration
 Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
 Name:		yubikey-manager
-Version:	4.0.9
+Version:	5.0.0
 Release:	1
 License:	BSD
 Group:		Applications/System
-Source0:	https://developers.yubico.com/yubikey-manager/Releases/%{name}-%{version}.tar.gz
-# Source0-md5:	216f7840cb396a06d77bf5700d81d4f2
+Source0:	https://developers.yubico.com/yubikey-manager/Releases/yubikey_manager-%{version}.tar.gz
+# Source0-md5:	0c4be1b791faf267c2bb29ca33f28fcf
 URL:		https://developers.yubico.com/yubikey-manager/
 BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-cryptography
-BuildRequires:	python3-fido2 >= 0.9.0
+BuildRequires:	python3-fido2 >= 1.0.0
 BuildRequires:	python3-mock
 BuildRequires:	python3-pyOpenSSL
 BuildRequires:	python3-pyscard
 BuildRequires:	python3-pyusb
 BuildRequires:	python3-six
 %endif
-Requires:	python3-fido2 >= 0.9.0
+Requires:	python3-fido2 >= 1.0.0
 Requires:	python3-modules >= 1:3.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +36,7 @@ Pythonowa biblioteka i narzędzie linii poleceń do konfiguracji
 urządzeń YubiKey.
 
 %prep
-%setup -q
+%setup -q -n yubikey_manager-%{version}
 
 %build
 %py3_build
