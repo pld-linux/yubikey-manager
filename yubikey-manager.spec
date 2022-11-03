@@ -14,6 +14,7 @@ Source0:	https://developers.yubico.com/yubikey-manager/Releases/yubikey_manager-
 URL:		https://developers.yubico.com/yubikey-manager/
 BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
+BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with tests}
 BuildRequires:	python3-cryptography
 BuildRequires:	python3-fido2 >= 1.0.0
