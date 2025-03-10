@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
 Name:		yubikey-manager
 # versions 5.1+ use poetry buildsystem
 Version:	5.0.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/System
 Source0:	https://developers.yubico.com/yubikey-manager/Releases/yubikey_manager-%{version}.tar.gz
