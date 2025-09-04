@@ -6,16 +6,16 @@ Summary:	Tool for managing your YubiKey configuration
 Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
 Name:		yubikey-manager
 # versions 5.1+ use poetry buildsystem
-Version:	5.7.2
-Release:	2
+Version:	5.8.0
+Release:	1
 License:	BSD
 Group:		Applications/System
 Source0:	https://developers.yubico.com/yubikey-manager/Releases/yubikey_manager-%{version}.tar.gz
-# Source0-md5:	7a6a0bdcbc1f2308b27623047628edba
+# Source0-md5:	3377af790f60d33ed194a38ecfded66b
 URL:		https://developers.yubico.com/yubikey-manager/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
-BuildRequires:	python3-modules >= 1:3.9
+BuildRequires:	python3-modules >= 1:3.10
 BuildRequires:	python3-poetry-core >= 2.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 2.044
@@ -24,16 +24,18 @@ BuildRequires:	python3-click >= 8.0
 BuildRequires:	python3-click < 9
 BuildRequires:	python3-cryptography >= 3.0
 BuildRequires:	python3-cryptography < 48
-BuildRequires:	python3-fido2 >= 1.0
+BuildRequires:	python3-fido2 >= 2.0
 BuildRequires:	python3-fido2 < 3
 BuildRequires:	python3-keyring >= 23.4
 BuildRequires:	python3-keyring < 26
 BuildRequires:	python3-makefun >= 1.9.5
+BuildRequires:	python3-makefun < 2
 BuildRequires:	python3-pyscard >= 2.0
 BuildRequires:	python3-pyscard < 3
-BuildRequires:	python3-pytest >= 7.2
+BuildRequires:	python3-pytest >= 8.0
+BuildRequires:	python3-pytest < 9
 %endif
-Requires:	python3-modules >= 1:3.9
+Requires:	python3-modules >= 1:3.10
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
