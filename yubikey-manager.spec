@@ -5,7 +5,6 @@
 Summary:	Tool for managing your YubiKey configuration
 Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
 Name:		yubikey-manager
-# versions 5.1+ use poetry buildsystem
 Version:	5.9.1
 Release:	1
 License:	BSD
