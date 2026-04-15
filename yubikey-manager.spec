@@ -6,12 +6,12 @@ Summary:	Tool for managing your YubiKey configuration
 Summary(pl.UTF-8):	Narzędzie do zarządzania urządzeniami YubiKey
 Name:		yubikey-manager
 # versions 5.1+ use poetry buildsystem
-Version:	5.9.0
+Version:	5.9.1
 Release:	1
 License:	BSD
 Group:		Applications/System
 Source0:	https://developers.yubico.com/yubikey-manager/Releases/yubikey_manager-%{version}.tar.gz
-# Source0-md5:	e4229eaeccd868e3096ce700b749695c
+# Source0-md5:	78d7c5ac1b9d32e7d5d5bec0b63ef367
 URL:		https://developers.yubico.com/yubikey-manager/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
@@ -35,7 +35,7 @@ BuildRequires:	python3-pskc < 2
 BuildRequires:	python3-pyscard >= 2.0
 BuildRequires:	python3-pyscard < 3
 BuildRequires:	python3-pytest >= 8.0
-BuildRequires:	python3-pytest < 9
+BuildRequires:	python3-pytest < 10
 %endif
 Requires:	python3-modules >= 1:3.10
 BuildArch:	noarch
